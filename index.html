@@ -2,14 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit-no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Dashboard</title>
+
+    <!--linking to css file-->
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!--linking to bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/8913dd217d.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    
+    <!--linking to jquery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"/>
 </head>
-<body>      
+
+<body>
 
     <nav class="navbar-nav mx-auto" id="nav">
         <a class="navbar-brand text-center" id="nav-text">Weather Dashboard</a>
@@ -18,41 +26,48 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-3">
-                <h3 id="h3">Search for a City:</h3>
-                <div class="input-group">
-                    <input class="form-control" id="city">
-                    <span class="input-group-btn">
-                        <button class="btn btn-info clear" id="btn"> <i class="fas fa-search"></i></button>
-                    </span>
-                </div>
-    </div>
-    <div class="col-8">
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title"></h2>
-                <p id="temperature">Temperature:</p>
-                <p id="humidity">Humidity:</p>
-                <p id="wind">Wind Speed:</p>
-                <p id="uv">UV Index:</p>
-            </div>
-        </div>
-        <div>
-            <br>
-            <h2>5-Day Forecast:</h2>
-            <div class="forecast" id="forecast-slot"></div>
-        </div>
-        <div class="card forecast" id=five-day-forecast-cards>
-            <div class="card-body">
-              <h5 class="card-title datetitle"></h5>
-              <p id="weatherIcon1"><img id="wicon1" src=""></p>
-              <p class = "tempFive"></p>
-              <p class = "humidFive"></p>
+          <div class="col-lg-4 searchContainer">
+            <form class="form-inline my-2 my-lg-0">
+              <h3>Search for a City:</h3>
+              <input
+                class="form-control mr-sm-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                id="search"
+              />
+              <button class="btn btn-primary my-2 my-sm-0" type="submit" id="search-button">
+                Search
+              </button>
+            </form>
+            <div class="card" style="width: 18rem;">
+              <ul class="list-group list-group-flush" id="search-history">
+              </ul>
             </div>
           </div>
-        
-    </div>
 
-    
+          <div class="col-8">
+            <div class="card row my-3">
+              <div class="card-body">
+                <h2 class="card-title" id="cityName"></h2>
+                <p>Temperature: <span id="temperature"></span></p>
+                <p>Humdity:<span id="humidity"></span></p>
+                <p>Wind Speed: <span id="wind-speed"></span></p>
+                <p>UV Index: <span id="uv-index"></span></p>
+              </div>
+            </div>
+  
+            <div>
+              <h2>5 day Forecast:</h2>
+              <div id="five-day-forecast" class="row"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <script src="script.js" async defer></script>        
+
 </body>
 </html>
