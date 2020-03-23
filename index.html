@@ -14,28 +14,21 @@
     
     <!--linking to jquery-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 </head>
 
 <body>
 
-    <nav class="navbar-nav mx-auto" id="nav">
-        <a class="navbar-brand text-center" id="nav-text">Weather Dashboard</a>
-      </nav>
-    </div>
+    <header class="navbar-nav bg-dark text-center py-3">
+        <span class="mb-0 h1 text-light">Weather Dashboard</span>
+      </header>
 
     <div class="container">
         <div class="row">
           <div class="col-lg-4 searchContainer">
             <form class="form-inline my-2 my-lg-0">
               <h3>Search for a City:</h3>
-              <input
-                class="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-                id="search"
-              />
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search"/>
               <button class="btn btn-primary my-2 my-sm-0" type="submit" id="search-button">
                 Search
               </button>
@@ -59,7 +52,8 @@
   
             <div>
               <h2>5 day Forecast:</h2>
-              <div id="five-day-forecast" class="row"></div>
+                <div id="five-day-forecast" class="row">           
+              </div>
             </div>
           </div>
         </div>
@@ -67,7 +61,7 @@
 
 
 
-      <script src="script.js" async defer></script>        
+      <script src="script.js"></script>        
 
 </body>
 </html>
